@@ -1,0 +1,16 @@
+<div class="w-50 p-3">
+<h1>Tasks</h1>
+
+<% @tasks.each do |task|%>
+<div class="task d-flex justify-content-between">
+  <p><%= task.completed %></p>
+  <h2><%= link_to task.title, task_path(task) %></h2>
+    <p><%= link_to "remove task", task_path(task), method: :delete %></p>
+    <p><%= link_to "edit", edit_path(task) %></p>
+</div>
+<% end %>
+
+<p class ="btn"><%= link_to "Add a task", new_path %></p>
+
+</div>
+
